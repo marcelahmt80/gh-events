@@ -14,7 +14,7 @@ on:
     branches:
       - master # master
       - 'dev-*' # dev-new dev-this-is-new
-       - 'dev' 
+      - 'dev' 
       - 'feat/**' # feat/new feat/new/button
       # developer-1 <-will not triggered this workflow beacause it's not defined
     paths-ignore:
