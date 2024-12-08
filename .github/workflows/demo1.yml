@@ -3,7 +3,22 @@ on:
   pull_request:
     types: 
       - opened
+      - reopened
+    branches:
+      - master # master
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'dev' 
+      - 'feat/**' # feat/new feat/new/button
   workflow_dispatch:
+  push:
+    branches:
+      - master # master
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'dev' 
+      - 'feat/**' # feat/new feat/new/button
+      # developer-1 <-will not triggered this workflow beacause it's not defined
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
